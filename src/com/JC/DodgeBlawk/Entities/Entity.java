@@ -83,8 +83,8 @@ public class Entity implements Serializable {
 	}
 
 	//General checks for values
-	public boolean equals(Object o) {
-		if (this == o) {
+	public boolean equals(Entity e) {
+		if (this.id == e.getId()) {
 			return true;
 		}
 		return false;

@@ -42,7 +42,7 @@ public class DodgeBlawk extends StateBasedGame {
 	public static final int help = 2;
 	public static final int difficulty = 3;
 	public static final int load = 4;
-	public static int mainversion = 2, subversion = 0;
+	public static int mainversion = 2, subversion = 1;
 	public static String version = "v" + mainversion + "." + subversion;
 	public static String userHome = System.getProperty("user.home");
 

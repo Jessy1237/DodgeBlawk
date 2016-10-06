@@ -39,6 +39,8 @@ public class DataManager {
 	public ArrayList<PowerChecker> powerchecker = new ArrayList<PowerChecker>();
 	public ArrayList<PowerUp> powerups = new ArrayList<PowerUp>();
 	public ArrayList<Score> highscore = new ArrayList<Score>();
+	
+	private int lastID = 10;
 
 	public String userHome = System.getProperty("user.home");
 
@@ -415,6 +417,16 @@ public class DataManager {
 				DodgeBlawk.player = p;
 			}
 		}
+		
+		int maxID = 0;
+		for( Entity e : entities) {
+		    if(e != null) {
+		        if( e.getId() > maxID) {
+		            maxID = e.getId();
+		        }
+		    }
+		}
+		lastID = maxID;
 	}
 
 	//Clears all the ArrayLists except highscores
@@ -428,4 +440,9 @@ public class DataManager {
 		blawks.clear();
 		powerchecker.clear();
 	}
+
+    public int getLastID()
+    {
+        return ++lastID;
+    }
 }

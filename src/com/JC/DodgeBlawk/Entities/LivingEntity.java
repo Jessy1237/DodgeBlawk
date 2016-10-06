@@ -85,14 +85,14 @@ public class LivingEntity extends Entity implements Serializable {
 			setLastShot(currentTime);
 			int negateValue = 4;
 			if (DodgeBlawk.player.getTexNum() == 2 || DodgeBlawk.player.getTexNum() == 3 || DodgeBlawk.player.getTexNum() == 4) {
-				DodgeBlawk.getDataManager().addBullet(new Bullet(new Location(getLocation().getX() - 10, (int) (getLocation().getY() + (getSize().getHeight() / 2))), DodgeBlawk.getDataManager().entities.size(), (new Size(18, 7)), new Direction("Left"), 1f, this, 1));
-				DodgeBlawk.getDataManager().addBullet(new Bullet(new Location(getLocation().getX(), (int) (getLocation().getY())), DodgeBlawk.getDataManager().entities.size(), (new Size(18, 7)), new Direction("Left"), 1f, this, 1));
-				DodgeBlawk.getDataManager().addBullet(new Bullet(new Location(getLocation().getX(), (int) (getLocation().getY() + (getSize().getHeight()))), DodgeBlawk.getDataManager().entities.size(), (new Size(18, 7)), new Direction("Left"), 1f, this, 1));
+				DodgeBlawk.getDataManager().addBullet(new Bullet(new Location(getLocation().getX() - 10, (int) (getLocation().getY() + (getSize().getHeight() / 2))), DodgeBlawk.getDataManager().getLastID(), (new Size(18, 7)), new Direction("Left"), 1f, this, 1));
+				DodgeBlawk.getDataManager().addBullet(new Bullet(new Location(getLocation().getX(), (int) (getLocation().getY())), DodgeBlawk.getDataManager().getLastID(), (new Size(18, 7)), new Direction("Left"), 1f, this, 1));
+				DodgeBlawk.getDataManager().addBullet(new Bullet(new Location(getLocation().getX(), (int) (getLocation().getY() + (getSize().getHeight()))), DodgeBlawk.getDataManager().getLastID(), (new Size(18, 7)), new Direction("Left"), 1f, this, 1));
 				DodgeBlawk.player.setHP(DodgeBlawk.player.getHP() - negateValue);
 			} else if (DodgeBlawk.player.getTexNum() == 0 || DodgeBlawk.player.getTexNum() == 1 || DodgeBlawk.player.getTexNum() == 5) {
-				DodgeBlawk.getDataManager().addBullet(new Bullet(new Location(getLocation().getX() + getSize().getWidth() + 10, (int) (getLocation().getY() + (getSize().getHeight() / 2))), DodgeBlawk.getDataManager().entities.size(), (new Size(18, 7)), new Direction("Right"), 1f, this, 0));
-				DodgeBlawk.getDataManager().addBullet(new Bullet(new Location(getLocation().getX() + getSize().getWidth(), (int) (getLocation().getY())), DodgeBlawk.getDataManager().entities.size(), (new Size(18, 7)), new Direction("Right"), 1f, this, 0));
-				DodgeBlawk.getDataManager().addBullet(new Bullet(new Location(getLocation().getX() + getSize().getWidth(), (int) (getLocation().getY() + (getSize().getHeight()))), DodgeBlawk.getDataManager().entities.size(), (new Size(18, 7)), new Direction("Right"), 1f, this, 0));
+				DodgeBlawk.getDataManager().addBullet(new Bullet(new Location(getLocation().getX() + getSize().getWidth() + 10, (int) (getLocation().getY() + (getSize().getHeight() / 2))), DodgeBlawk.getDataManager().getLastID(), (new Size(18, 7)), new Direction("Right"), 1f, this, 0));
+				DodgeBlawk.getDataManager().addBullet(new Bullet(new Location(getLocation().getX() + getSize().getWidth(), (int) (getLocation().getY())), DodgeBlawk.getDataManager().getLastID(), (new Size(18, 7)), new Direction("Right"), 1f, this, 0));
+				DodgeBlawk.getDataManager().addBullet(new Bullet(new Location(getLocation().getX() + getSize().getWidth(), (int) (getLocation().getY() + (getSize().getHeight()))), DodgeBlawk.getDataManager().getLastID(), (new Size(18, 7)), new Direction("Right"), 1f, this, 0));
 				if (Generation.generate){
 				DodgeBlawk.player.setHP(DodgeBlawk.player.getHP() - negateValue);
 				} 

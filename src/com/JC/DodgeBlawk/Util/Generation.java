@@ -50,7 +50,7 @@ public class Generation {
 						.nextInt((DodgeBlawk.height - 32) - 65);
 
 				// Creates new Aesteroid
-				Asteroid asteroid = new Asteroid(new Location(x, y), DodgeBlawk.getDataManager().entities.size(), new Size(32, 32),
+				Asteroid asteroid = new Asteroid(new Location(x, y), DodgeBlawk.getDataManager().getLastID(), new Size(32, 32),
 						(float) (0.15f * increment));
 				DodgeBlawk.getDataManager().addAsteroid(asteroid);
 
@@ -90,11 +90,11 @@ public class Generation {
 			int powerUpType = random.nextInt(50);
 			PowerUp pu = null;
 			if (powerUpType >= 0 && powerUpType < 25) {
-				pu = new PowerUp(l, DodgeBlawk.getDataManager().entities.size(), new Size(32, 32), new Power(1, 8, 1, 0, 0), 1, 10, System.currentTimeMillis());
+				pu = new PowerUp(l, DodgeBlawk.getDataManager().getLastID(), new Size(32, 32), new Power(1, 8, 1, 0, 0), 1, 10, System.currentTimeMillis());
 			} else if (powerUpType >= 25 && powerUpType < 35) {
-				pu = new PowerUp(l, DodgeBlawk.getDataManager().entities.size(), new Size(32, 32), new Power(2, 3, 1, 0, 0), 2, 10, System.currentTimeMillis());
+				pu = new PowerUp(l, DodgeBlawk.getDataManager().getLastID(), new Size(32, 32), new Power(2, 3, 1, 0, 0), 2, 10, System.currentTimeMillis());
 			} else if (powerUpType >= 35 && powerUpType <= 50) {
-				pu = new PowerUp(l, DodgeBlawk.getDataManager().entities.size(), new Size(32, 32), new Power(3, 0, 0, 0, 0), 3, 10, System.currentTimeMillis());
+				pu = new PowerUp(l, DodgeBlawk.getDataManager().getLastID(), new Size(32, 32), new Power(3, 0, 0, 0, 0), 3, 10, System.currentTimeMillis());
 			}
 			DodgeBlawk.getDataManager().addPowerUp(pu);
 		}
